@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 from validators.url import url
 st.title('Kanna Says!!')
 text = st.text_input("What do you want kanna to say?\n")
@@ -21,7 +21,7 @@ result = st.text_input("Add text for result bar!")
 if search and result == "":
     st.write("Maybe write something?")
 else:
-    imgurl = "https://i.imgur.com/wNFr5X2.jpg"
+    imgurl = requests.get("https://i.imgur.com/wNFr5X2.jpg")
     with open("temp.jpg", "wb") as f:
         f.write(requests.get(imgurl).content)
     img = Image.open("temp.jpg")
