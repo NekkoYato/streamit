@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 from PIL import Image
 from validators.url import url
-if st.button("Kanna!")
+if st.button("Kanna!"):
     st.title('Kanna Says!!')
     text = st.text_input("What do you want kanna to say?\n")
     if text == '':
