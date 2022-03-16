@@ -16,5 +16,12 @@ if st.button("Kanna!"):
             f.write(requests.get(a).content)
         img = Image.open("temp.png").convert("RGB")
         st.image(img)
+    with open("temp.png", "rb") as file:
+     btn = st.download_button(
+             label="Download image",
+             data=file,
+             file_name="temp.png.png",
+             mime="image/png"
+           )
 else:
     st.write("Meow")
