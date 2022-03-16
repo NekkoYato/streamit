@@ -22,9 +22,9 @@ if search and result == "":
     st.write("Maybe write something?")
 else:
     imgurl = "https://i.imgur.com/wNFr5X2.jpg"
-    with open("./temp/temp.jpg", "wb") as f:
+    with open("temp.jpg", "wb") as f:
         f.write(requests.get(imgurl).content)
-    img = Image.open("./temp/temp.jpg")
+    img = Image.open("temp.jpg")
     drawing = ImageDraw.Draw(img)
     blue = (0, 0, 255)
     black = (0, 0, 0)
