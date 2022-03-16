@@ -22,7 +22,7 @@ if search and result == "":
     st.write("Maybe write something?")
 else:
     imgurl = requests.get("https://i.imgur.com/wNFr5X2.jpg"
-).json()
+)
     with open("temp.jpg", "wb") as f:
         f.write(requests.get(imgurl).content)
     img = Image.open("temp.jpg")
