@@ -4,6 +4,7 @@ from PIL import Image
 from validators.url import url
 st.title("Hello there!")
 st.title('Kanna Says!!')
+st.image("https://c.tenor.com/BAjY_lw4z3gAAAAd/kanna-eating.gif")
 text = st.text_input("What do you want kanna to say?\n")
 if text == '':
     st.write("Type something!!")
