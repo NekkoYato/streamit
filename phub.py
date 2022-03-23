@@ -10,22 +10,20 @@ if text != None:
        xt.save("mp.png",optimize=True,quality=95)
        response = upload_file("mp.png")
        text1 = f"https://telegra.ph{response[0]}"
+       text3 = st.text_input("Enter username!!")
+       text2 = st.text_input("Enter the comment you want!")
+       if text2 and text3 != "":    
+           r = requests.get(
+               f"https://nekobot.xyz/api/imagegen?type=phcomment&image={text1}&text={text2}&username={text3}"
+           ).json()
+           a = r.get("message")
+           iurl = url(a)
+           with open("temp.png", "wb") as f:
+               f.write(requests.get(a).content)
+           img = Image.open("temp.png")
+           if img.mode != "RGB":
+               img = img.convert("RGB")
+           img.save("temp.png", "png")
+           st.image(img)
 else:
-    st.write("Upload some image please!")
-text3 = st.text_input("Enter username!!")
-text2 = st.text_input("Enter the comment you want!")
-if text2 and text3 != "":    
-    r = requests.get(
-        f"https://nekobot.xyz/api/imagegen?type=phcomment&image={text1}&text={text2}&username={text3}"
-    ).json()
-    a = r.get("message")
-    iurl = url(a)
-    with open("temp.png", "wb") as f:
-        f.write(requests.get(a).content)
-    img = Image.open("temp.png")
-    if img.mode != "RGB":
-        img = img.convert("RGB")
-    img.save("temp.png", "png")
-    st.image(img)
-else:
-    st.write("well, try something interesting hehe")
+    st.write("Try it duh!")
