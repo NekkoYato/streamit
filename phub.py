@@ -7,7 +7,8 @@ import os
 try:
     import telegraph
 except ModuleNotFoundError:
-    os.system("pip3 install telegraph")
+    os.system("pip install telegraph")
+    from telegraph import upload_file
 text = st.file_uploader("Enter the image you want to use!")
 response = upload_file(text)
 text1 = f"https://telegra.ph{response[0]}"
