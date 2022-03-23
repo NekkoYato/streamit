@@ -1,8 +1,7 @@
 from http.client import REQUEST_ENTITY_TOO_LARGE
-from tkinter import Image
 from urllib import request
 import streamlit as st
-from PIL import ImageMath
+from PIL import Image, ImageMath
 import urllib3
 import os
 from telegraph import exceptions, upload_file
