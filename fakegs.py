@@ -12,7 +12,7 @@ if search and result != "":
     drawing = ImageDraw.Draw(img)
     blue = (0, 0, 255)
     black = (0, 0, 0)
-    font1 = ImageFont.truetype("resources/ProductSans-BoldItalic.ttf", 20)
+    font1 = ImageFont.truetype("resources/ProductSans-BoldItalic.ttf", 23)
     font2 = ImageFont.truetype("resources/ProductSans-Light.ttf", 23)
     drawing.text((450, 258), result, fill=blue, font=font1)
     drawing.text((270, 37), search, fill=black, font=font2)
