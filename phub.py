@@ -1,7 +1,6 @@
 import requests
 import streamlit as st
 from PIL import Image, ImageMath
-import urllib3
 from validators.url import url
 from telegraph import upload_file
 text = st.file_uploader("Enter the image you want to use!")
@@ -18,7 +17,7 @@ if text1 and text2 and text3 != "":
     a = r.get("message")
     iurl = url(a)
     with open("temp.png", "wb") as f:
-        f.write(request.get(a).content)
+        f.write(requests.get(a).content)
     img = Image.open("temp.png")
     if img.mode != "RGB":
         img = img.convert("RGB")
