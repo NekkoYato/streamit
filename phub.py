@@ -2,7 +2,7 @@ import requests
 from urllib import request
 import streamlit as st
 from PIL import Image, ImageMath
-import urllib3
+from validators.url import url
 from telegraph import upload_file
 text = st.file_uploader("Enter the image you want to use!")
 xt = Image.open(text)
