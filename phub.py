@@ -7,7 +7,7 @@ from telegraph import upload_file
 text = st.file_uploader("Enter the image you want to use!")
 xt = Image.open(text)
 xt.save("mp.jpg")
-response = upload_file(xt)
+response = upload_file("mp.jpg")
 text1 = f"https://telegra.ph{response[0]}"
 text3 = st.text_input("Enter username!!")
 text2 = st.text_input("Enter the comment you want!")
