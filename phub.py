@@ -8,9 +8,9 @@ if text != None:
     xt = Image.open(text)
     xt.save("mp.png")
     response = upload_file("mp.png")
-text1 = f"https://telegra.ph{response[0]}"
 else:
     st.write("Upload some image!")
+text1 = f"https://telegra.ph{response[0]}"
 text3 = st.text_input("Enter username!!")
 text2 = st.text_input("Enter the comment you want!")
 if text2 and text3 != "":    
