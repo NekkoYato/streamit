@@ -22,5 +22,6 @@ if text1 and text2 and text3 != "":
     if img.mode != "RGB":
         img = img.convert("RGB")
     img.save("temp.jpg", "jpeg")
+    st.image(img)
 else:
     st.write("well, try something interesting hehe")
