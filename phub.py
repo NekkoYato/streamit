@@ -3,12 +3,7 @@ from urllib import request
 import streamlit as st
 from PIL import Image, ImageMath
 import urllib3
-import os
-try:
-    import telegraph
-except ModuleNotFoundError:
-    os.system("python3 -m pip install telegraph")
-    from telegraph import upload_file
+from telegraph import upload_file
 text = st.file_uploader("Enter the image you want to use!")
 response = upload_file(text)
 text1 = f"https://telegra.ph{response[0]}"
