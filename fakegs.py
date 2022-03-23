@@ -6,7 +6,7 @@ search = st.text_input("Add text for search bar!")
 result = st.text_input("Add text for result bar!")
 if search and result != "":
     r = requests.get(f"https://i.imgur.com/wNFr5X2.jpg"
-).json()
+)
     a = r.get("message")
     iurl = url(a)
     with open("temp.jpg", "wb") as f:
