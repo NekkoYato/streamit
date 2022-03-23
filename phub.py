@@ -8,12 +8,12 @@ if text != None:
     xt = Image.open(text)
     xt.save("mp.png")
     response = upload_file("mp.png")
-    text1 = f"https://telegra.ph{response[0]}"
+text1 = f"https://telegra.ph{response[0]}"
 else:
     st.write("Upload some image!")
 text3 = st.text_input("Enter username!!")
 text2 = st.text_input("Enter the comment you want!")
-if text1 and text2 and text3 != "":    
+if text2 and text3 != "":    
     r = requests.get(
         f"https://nekobot.xyz/api/imagegen?type=phcomment&image={text1}&text={text2}&username={text3}"
     ).json()
