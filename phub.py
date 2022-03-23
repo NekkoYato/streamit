@@ -4,13 +4,13 @@ from PIL import Image, ImageMath
 from validators.url import url
 from telegraph import upload_file
 text = st.file_uploader("Enter the image you want to use!")
-if text != None:
+if text.endswith('png','jpg','jpeg'):
     xt = Image.open(text)
     xt.save("mp.png")
     response = upload_file("mp.png")
+    text1 = f"https://telegra.ph{response[0]}"
 else:
-    st.write("Upload some image!")
-text1 = f"https://telegra.ph{response[0]}"
+    st.write("Upload some image please!")
 text3 = st.text_input("Enter username!!")
 text2 = st.text_input("Enter the comment you want!")
 if text2 and text3 != "":    
