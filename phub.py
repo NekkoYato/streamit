@@ -5,7 +5,9 @@ from PIL import Image, ImageMath
 import urllib3
 from telegraph import upload_file
 text = st.file_uploader("Enter the image you want to use!")
-response = upload_file(text)
+xt = Image.open(text)
+xt.save("mp.jpg")
+response = upload_file(xt)
 text1 = f"https://telegra.ph{response[0]}"
 text3 = st.text_input("Enter username!!")
 text2 = st.text_input("Enter the comment you want!")
