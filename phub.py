@@ -8,7 +8,6 @@ try:
     import telegraph
 except ModuleNotFoundError:
     os.system("pip3 install telegraph")
-    import telegraph
 text = st.file_uploader("Enter the image you want to use!")
 try:
     response = upload_file(text)
