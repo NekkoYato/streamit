@@ -1,4 +1,4 @@
-from http.client import REQUEST_ENTITY_TOO_LARGE
+import requests
 from urllib import request
 import streamlit as st
 from PIL import Image, ImageMath
@@ -10,7 +10,7 @@ text1 = f"https://telegra.ph{response[0]}"
 text3 = st.text_input("Enter username!!")
 text2 = st.text_input("Enter the comment you want!")
 if text1 and text2 and text3 != "":    
-    r = REQUEST_ENTITY_TOO_LARGE.get(
+    r = requests.get(
         f"https://nekobot.xyz/api/imagegen?type=phcomment&image={text1}&text={text2}&username={text3}"
     ).json()
     a = r.get("message")
