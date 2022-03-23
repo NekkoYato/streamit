@@ -3,7 +3,7 @@ import streamlit as st
 from PIL import Image, ImageMath
 from validators.url import url
 from telegraph import upload_file
-text = st.file_uploader(type=['png', 'jpg','jpeg'],"Enter the image you want to use!")
+text = st.file_uploader("Enter the image you want to use!",type=['png', 'jpg','jpeg'])
 if text != None:
        xt = Image.open(text)
        xt.save("mp.png")
