@@ -5,10 +5,10 @@ from PIL import Image, ImageMath
 import urllib3
 import os
 try:
-    from telegraph import exceptions, upload_file
+    import telegraph
 except ModuleNotFoundError:
     os.system("pip3 install telegraph")
-    from telegraph import exceptions, upload_file
+    import telegraph
 text = st.file_uploader("Enter the image you want to use!")
 try:
     response = upload_file(text)
