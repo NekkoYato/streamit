@@ -7,7 +7,7 @@ search = st.text_input("Add text for search bar!")
 result = st.text_input("Add text for result bar!")
 if search and result != "":
     a = urllib.request.urlretrieve(
-        "https://i.imgur.com/wNFr5X2.jpg")
+        "https://i.imgur.com/wNFr5X2.jpg","temp.jpg")
     with open("temp.jpg", "wb") as f:
         f.write(requests.get(a).content)
     img = Image.open("temp.jpg")
