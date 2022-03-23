@@ -1,5 +1,4 @@
 import requests
-from urllib import request
 import streamlit as st
 from PIL import Image, ImageMath
 from validators.url import url
