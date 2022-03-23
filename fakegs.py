@@ -8,8 +8,6 @@ result = st.text_input("Add text for result bar!")
 if search and result != "":
     t = "temp.jpg"
     a = urllib.request.urlretrieve("https://i.imgur.com/wNFr5X2.jpg",t)
-    with open("temp.jpg", "wb") as f:
-        f.write(requests.get(a).content)
     img = Image.open("temp.jpg")
     drawing = ImageDraw.Draw(img)
     blue = (0, 0, 255)
