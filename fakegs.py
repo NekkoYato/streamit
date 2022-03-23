@@ -5,10 +5,7 @@ from validators.url import url
 search = st.text_input("Add text for search bar!")
 result = st.text_input("Add text for result bar!")
 if search and result != "":
-    r = requests.get(f"https://i.imgur.com/wNFr5X2.jpg"
-)
-    a = r.get("message")
-    iurl = url(a)
+    a = "https://i.imgur.com/wNFr5X2.jpg"
     with open("temp.jpg", "wb") as f:
         f.write(requests.get(a).content)
     img = Image.open("temp.jpg")
