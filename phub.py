@@ -14,7 +14,7 @@ if text1 and text2 and text3 != "":
         f"https://nekobot.xyz/api/imagegen?type=phcomment&image={text1}&text={text2}&username={text3}"
     ).json()
     a = r.get("message")
-    iurl = urllib3(a)
+    iurl = url(a)
     with open("temp.png", "wb") as f:
         f.write(request.get(a).content)
     img = Image.open("temp.png")
