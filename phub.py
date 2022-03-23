@@ -9,10 +9,7 @@ try:
 except ModuleNotFoundError:
     os.system("pip3 install telegraph")
 text = st.file_uploader("Enter the image you want to use!")
-try:
-    response = upload_file(text)
-except exceptions.TelegraphException as exc:
-    os.remove(text)
+response = upload_file(text)
 text1 = f"https://telegra.ph{response[0]}"
 text3 = st.text_input("Enter username!!")
 text2 = st.text_input("Enter the comment you want!")
