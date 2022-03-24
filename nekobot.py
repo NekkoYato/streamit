@@ -175,12 +175,12 @@ with st.expander("Captcha"):
              img.save("temp.png", "png")
              st.image(img)
              with open("temp.png", "rb") as file:
-           btn = st.download_button(
-                  label="Download",
-                  data=file,
-                  file_name="captcha.png",
-                  mime="image/png"
-                )
+                        btn = st.download_button(
+                               label="Download",
+                               data=file,
+                               file_name="threats.png",
+                               mime="image/png"
+                             )
   else:
       st.write("Proving your humanity?")
 with st.expander("Fake google search"):
