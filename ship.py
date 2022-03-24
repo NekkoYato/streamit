@@ -14,11 +14,7 @@ if text1 != None:
        x = Image.open(text2)
        x.save("m.png",optimize=True,quality=95)
        resp = upload_file("m.png")
-       text2 = f"https://telegra.ph{resp[0]}"    
-       x = Image.open(text2)
-       x.save("m.png",optimize=True,quality=95)
-       resp = upload_file("m.png")
-       text2 = f"https://telegra.ph{resp[0]}"    
+       text2 = f"https://telegra.ph{resp[0]}" 
        r = requests.get(
            f"https://nekobot.xyz/api/imagegen?type=ship&user1={text1}&user2={text2}"
        ).json()
