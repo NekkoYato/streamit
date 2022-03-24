@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 from PIL import Image
 from validators.url import url
-st.title("Hello there!")
+st.markdown("<h1 style='text-align: center; color: white;'>Kanna!</h1>", unsafe_allow_html=True)
 st.title('Kanna Says!!')
 st.image("https://c.tenor.com/BAjY_lw4z3gAAAAd/kanna-eating.gif")
 text = st.text_input("What do you want kanna to say?\n")
