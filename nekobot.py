@@ -172,13 +172,13 @@ with st.expander("Change my mind?"):
   else:
       st.write("Type something!!")
 with st.expander("Shipping!"):
-  taext1 = st.file_uploader("Enter first image you want to use!",type=['png', 'jpg','jpeg'])
+  taext1 = st.file_uploader("Enter the first image you want to use!",type=['png', 'jpg','jpeg'])
   if taext1 != None:
        xt = Image.open(taext1)
        xt.save("mp.png",optimize=True,quality=95)
        response = upload_file("mp.png")
        taext1 = f"https://telegra.ph{response[0]}"
-       taext2 = st.file_uploader("Enter second image you want to use!",type=['png', 'jpg','jpeg'])
+       taext2 = st.file_uploader("Enter the second image you want to use!",type=['png', 'jpg','jpeg'])
        if taext2 != None:
          x = Image.open(taext2)
          x.save("m.png",optimize=True,quality=95)
