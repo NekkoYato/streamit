@@ -6,7 +6,6 @@ from telegraph import upload_file
 text = st.file_uploader("Enter the image you want to use!",type=['png', 'jpg','jpeg'])
 if text != None:
        xt = Image.open(text)
-       xt = xt.resize((256,256),Image.ANTIALIAS)
        xt.save("mp.png",optimize=True,quality=95)
        response = upload_file("mp.png")
        text1 = f"https://telegra.ph{response[0]}"
