@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 from PIL import Image
 from validators.url import url
-col1, col2, col3 = st.beta_columns(3)
+col1, col2, col3 = st.columns(3)
 if col2.button('Click'):
     st.markdown("<h1 style='text-align: center; color: white;'>Kanna!</h1>", unsafe_allow_html=True)
     st.title('Kanna Says!!')
