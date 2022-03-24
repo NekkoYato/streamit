@@ -20,14 +20,17 @@ with st.expander("Kanna"):
       with open("temp.png", "wb") as f:
           f.write(requests.get(a).content)
       img = Image.open("temp.png").convert("RGB")
-      st.image(img)
-      with open("temp.png", "rb") as file:
-        btn = st.download_button(
-               label="Download",
-               data=file,
-               file_name="kanna.png",
-               mime="image/png"
-             )
+      col1, col2 = st.columns(2)
+      with col1:
+        st.image(img)
+      with col2:
+        with open("temp.png", "rb") as file:
+          btn = st.download_button(
+                 label="Download",
+                 data=file,
+                 file_name="kanna.png",
+                 mime="image/png"
+               )
 with st.expander("Pornhub Comment"):
   text = st.file_uploader("Enter the image you want to use!",type=['png', 'jpg','jpeg'])
   if text != None:
