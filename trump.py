@@ -3,9 +3,7 @@ import requests
 from PIL import Image
 from validators.url import url
 text = st.text_input("What to tweet with trump's twitter?\n")
-if text == '':
-    st.write("Type something!!")
-else:
+if text != '':
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=trumptweet&text={text}"
 ).json()
     a = r.get("message")
@@ -14,3 +12,5 @@ else:
         f.write(requests.get(a).content)
     img = Image.open("temp.png").convert("RGB")
     st.image(img)
+else:
+    st.write("Type something!!")
