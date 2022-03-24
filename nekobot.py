@@ -20,17 +20,15 @@ with st.expander("Kanna"):
       with open("temp.png", "wb") as f:
           f.write(requests.get(a).content)
       img = Image.open("temp.png").convert("RGB")
-      col1, col2 = st.columns(2)
-      with col1:
-        st.image(img)
-      with col2:
-        with open("temp.png", "rb") as file:
-          btn = st.download_button(
-                 label="Download",
-                 data=file,
-                 file_name="kanna.png",
-                 mime="image/png"
-               )
+      st.image(img)
+      with open("temp.png", "rb") as file:
+        btn = st.download_button(
+               label="Download",
+               data=file,
+               file_name="kanna.png",
+               mime="image/png"
+             )
+        
 with st.expander("Pornhub Comment"):
   text = st.file_uploader("Enter the image you want to use!",type=['png', 'jpg','jpeg'])
   if text != None:
@@ -53,6 +51,13 @@ with st.expander("Pornhub Comment"):
                  img = img.convert("RGB")
              img.save("temp.png", "png")
              st.image(img)
+             with open("temp.png", "rb") as file:
+               btn = st.download_button(
+                      label="Download",
+                      data=file,
+                      file_name="phub.png",
+                      mime="image/png"
+                    )
   else:
       st.write("Try it duh!")
 
@@ -74,7 +79,14 @@ with st.expander("Threats"):
          if img.mode != "RGB":
              img = img.convert("RGB")
          img.save("temp.png", "png")
-         st.image(img)
+         st.image(img)       
+         with open("temp.png", "rb") as file:
+           btn = st.download_button(
+                  label="Download",
+                  data=file,
+                  file_name="threats.png",
+                  mime="image/png"
+                )
   else:
       st.write("Threatening...")
       
@@ -103,6 +115,13 @@ with st.expander("Who would win?"):
              img = img.convert("RGB")
          img.save("temp.png", "png")
          st.image(img)
+         with open("temp.png", "rb") as file:
+           btn = st.download_button(
+                  label="Download",
+                  data=file,
+                  file_name="whowouldwin.png",
+                  mime="image/png"
+                )
   else:
       st.write("Competition?")
  
@@ -125,6 +144,13 @@ with st.expander("Baguette"):
              img = img.convert("RGB")
          img.save("temp.png", "png")
          st.image(img)
+         with open("temp.png", "rb") as file:
+           btn = st.download_button(
+                  label="Download",
+                  data=file,
+                  file_name="baguette.png",
+                  mime="image/png"
+                )
   else:
       st.write("baguette ?")
 with st.expander("Captcha"):
@@ -148,6 +174,13 @@ with st.expander("Captcha"):
                  img = img.convert("RGB")
              img.save("temp.png", "png")
              st.image(img)
+             with open("temp.png", "rb") as file:
+           btn = st.download_button(
+                  label="Download",
+                  data=file,
+                  file_name="captcha.png",
+                  mime="image/png"
+                )
   else:
       st.write("Proving your humanity?")
 with st.expander("Fake google search"):
@@ -166,6 +199,13 @@ with st.expander("Fake google search"):
       drawing.text((270, 37), search, fill=black, font=font2)
       img.save("temp.jpg")
       st.image(img)
+      with open("temp.png", "rb") as file:
+           btn = st.download_button(
+                  label="Download",
+                  data=file,
+                  file_name="fakegs.png",
+                  mime="image/png"
+                )
   else:
       st.write("Type something perhaps?")
 with st.expander("Change my mind?"):
@@ -179,6 +219,13 @@ with st.expander("Change my mind?"):
           f.write(requests.get(a).content)
       img = Image.open("temp.png").convert("RGB")
       st.image(img)
+      with open("temp.png", "rb") as file:
+           btn = st.download_button(
+                  label="Download",
+                  data=file,
+                  file_name="changemymind.png",
+                  mime="image/png"
+                )
   else:
       st.write("Type something!!")
 with st.expander("Shipping!"):
@@ -206,6 +253,13 @@ with st.expander("Shipping!"):
              img = img.convert("RGB")
          img.save("temp.png", "png")
          st.image(img)
+         with open("temp.png", "rb") as file:
+           btn = st.download_button(
+                  label="Download",
+                  data=file,
+                  file_name="ship.png",
+                  mime="image/png"
+                )
   else:
       st.write("Let's ship some people!")
 
@@ -222,5 +276,12 @@ with st.expander("Tweet!"):
           f.write(requests.get(a).content)
       img = Image.open("temp.png").convert("RGB")
       st.image(img)
+      with open("temp.png", "rb") as file:
+           btn = st.download_button(
+                  label="Download",
+                  data=file,
+                  file_name="tweet.png",
+                  mime="image/png"
+                )
   else:
       st.write("Type something!!")
