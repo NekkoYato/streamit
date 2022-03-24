@@ -47,9 +47,9 @@ with st.expander("Pornhub Comment"):
       st.write("Try it duh!")
 
 with st.expander("Threats"):
-  text = st.file_uploader("Enter the image you want to use!",type=['png', 'jpg','jpeg'])
-  if text != None:
-         xt = Image.open(text)
+  tex = st.file_uploader("Enter the image you want to use!",type=['png', 'jpg','jpeg'])
+  if tex != None:
+         xt = Image.open(tex)
          xt.save("mp.png",optimize=True,quality=95)
          response = upload_file("mp.png")
          text1 = f"https://telegra.ph{response[0]}"    
@@ -69,20 +69,20 @@ with st.expander("Threats"):
       st.write("Threatening...")
       
 with st.expander("Who would win?"):
-  text1 = st.file_uploader("Enter first image you want to use!",type=['png', 'jpg','jpeg'])
-  if text1 != None:
-       xt = Image.open(text1)
+  text11 = st.file_uploader("Enter first image you want to use!",type=['png', 'jpg','jpeg'])
+  if text11 != None:
+       xt = Image.open(text11)
        xt.save("mp.png",optimize=True,quality=95)
        response = upload_file("mp.png")
-       text1 = f"https://telegra.ph{response[0]}"
-       text2 = st.file_uploader("Enter second image you want to use!",type=['png', 'jpg','jpeg'])
-       if text2 != None:
-         x = Image.open(text2)
+       text11 = f"https://telegra.ph{response[0]}"
+       text22 = st.file_uploader("Enter second image you want to use!",type=['png', 'jpg','jpeg'])
+       if text22 != None:
+         x = Image.open(text22)
          x.save("m.png",optimize=True,quality=95)
          resp = upload_file("m.png")
          text2 = f"https://telegra.ph{resp[0]}" 
          r = requests.get(
-             f"https://nekobot.xyz/api/imagegen?type=whowouldwin&user1={text1}&user2={text2}"
+             f"https://nekobot.xyz/api/imagegen?type=whowouldwin&user1={text11}&user2={text22}"
          ).json()
          a = r.get("message")
          iurl = url(a)
@@ -97,14 +97,14 @@ with st.expander("Who would win?"):
       st.write("Competition?")
 
 with st.expander("Baguette"):
-  text = st.file_uploader("Enter the image you want to use!",type=['png', 'jpg','jpeg'])
-  if text != None:
-         xt = Image.open(text)
+  textt = st.file_uploader("Enter the image you want to use!",type=['png', 'jpg','jpeg'])
+  if textt != None:
+         xt = Image.open(textt)
          xt.save("mp.png",optimize=True,quality=95)
          response = upload_file("mp.png")
-         text1 = f"https://telegra.ph{response[0]}"    
+         texxt1 = f"https://telegra.ph{response[0]}"    
          r = requests.get(
-             f"https://nekobot.xyz/api/imagegen?type=baguette&url={text1}"
+             f"https://nekobot.xyz/api/imagegen?type=baguette&url={texxt1}"
          ).json()
          a = r.get("message")
          iurl = url(a)
@@ -118,16 +118,16 @@ with st.expander("Baguette"):
   else:
       st.write("baguette ?")
 with st.expander("Captcha"):
-  text = st.file_uploader("Enter the captcha image you want to use!",type=['png', 'jpg','jpeg'])
-  if text != None:
-         xt = Image.open(text)
+  temxt = st.file_uploader("Enter the captcha image you want to use!",type=['png', 'jpg','jpeg'])
+  if temxt != None:
+         xt = Image.open(temxt)
          xt.save("mp.png",optimize=True,quality=95)
          response = upload_file("mp.png")
-         text1 = f"https://telegra.ph{response[0]}"
-         text2 = st.text_input("Enter username!!")
-         if text2 != "":    
+         temxt1 = f"https://telegra.ph{response[0]}"
+         temxt2 = st.text_input("Enter username!!")
+         if temxt2 != "":    
              r = requests.get(
-                 f"https://nekobot.xyz/api/imagegen?type=captcha&url={text1}&username={text2}"
+                 f"https://nekobot.xyz/api/imagegen?type=captcha&url={temxt1}&username={temxt2}"
              ).json()
              a = r.get("message")
              iurl = url(a)
@@ -172,20 +172,20 @@ with st.expander("Change my mind?"):
   else:
       st.write("Type something!!")
 with st.expander("Shipping!"):
-  text1 = st.file_uploader("Enter first image you want to use!",type=['png', 'jpg','jpeg'])
-  if text1 != None:
-       xt = Image.open(text1)
+  taext1 = st.file_uploader("Enter first image you want to use!",type=['png', 'jpg','jpeg'])
+  if taext1 != None:
+       xt = Image.open(taext1)
        xt.save("mp.png",optimize=True,quality=95)
        response = upload_file("mp.png")
-       text1 = f"https://telegra.ph{response[0]}"
-       text2 = st.file_uploader("Enter second image you want to use!",type=['png', 'jpg','jpeg'])
-       if text2 != None:
-         x = Image.open(text2)
+       taext1 = f"https://telegra.ph{response[0]}"
+       taext2 = st.file_uploader("Enter second image you want to use!",type=['png', 'jpg','jpeg'])
+       if taext2 != None:
+         x = Image.open(taext2)
          x.save("m.png",optimize=True,quality=95)
          resp = upload_file("m.png")
-         text2 = f"https://telegra.ph{resp[0]}" 
+         taext2 = f"https://telegra.ph{resp[0]}" 
          r = requests.get(
-             f"https://nekobot.xyz/api/imagegen?type=ship&user1={text1}&user2={text2}"
+             f"https://nekobot.xyz/api/imagegen?type=ship&user1={taext1}&user2={taext2}"
          ).json()
          a = r.get("message")
          iurl = url(a)
@@ -200,11 +200,11 @@ with st.expander("Shipping!"):
       st.write("Let's ship some people!")
 
 with st.expander("Tweet!"):
-  text1 = st.text_input("Enter the username!\n")
-  text2 = st.text_input("What do you want to tweet?\n")
-  if text1 and text2 != '':
+  textt1 = st.text_input("Enter the username!\n")
+  textt2 = st.text_input("What do you want to tweet?\n")
+  if textt1 and textt2 != '':
       r = requests.get(
-          f"https://nekobot.xyz/api/imagegen?type=tweet&text={text2}&username={text1}"
+          f"https://nekobot.xyz/api/imagegen?type=tweet&text={textt2}&username={textt1}"
       ).json()
       a = r.get("message")
       iurl = url(a)
@@ -214,4 +214,3 @@ with st.expander("Tweet!"):
       st.image(img)
   else:
       st.write("Type something!!")
-      
