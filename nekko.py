@@ -2,8 +2,8 @@ import streamlit as st
 import requests
 from PIL import Image
 from validators.url import url
-col1, col2, col3 = st.columns(3)
-if col2.button('Click'):
+col1, col2, col3, col4, col5 = st.columns(5)
+if col3.button('Click'):
     st.markdown("<h1 style='text-align: center; color: white;'>Kanna!</h1>", unsafe_allow_html=True)
     st.title('Kanna Says!!')
     st.image("https://c.tenor.com/BAjY_lw4z3gAAAAd/kanna-eating.gif")
