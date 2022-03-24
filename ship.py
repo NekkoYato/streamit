@@ -12,7 +12,7 @@ if text1 != None:
      text2 = st.file_uploader("Enter second image you want to use!",type=['png', 'jpg','jpeg'])
      if text2 != None:
        x = Image.open(text2)
-       x.save("mp.png",optimize=True,quality=95)
+       x.save("m.png",optimize=True,quality=95)
        resp = upload_file("m.png")
        text2 = f"https://telegra.ph{resp[0]}"    
        x = Image.open(text2)
