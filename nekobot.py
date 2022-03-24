@@ -95,16 +95,16 @@ with st.expander("Who would win?"):
          st.image(img)
   else:
       st.write("Competition?")
-
+ 
 with st.expander("Baguette"):
-  textt = st.file_uploader("Enter the image you want to use!",type=['png', 'jpg','jpeg'])
+  textt = st.file_uploader("Enter the image for baguette you want to use",type=['png', 'jpg','jpeg'])
   if textt != None:
          xt = Image.open(textt)
          xt.save("mp.png",optimize=True,quality=95)
          response = upload_file("mp.png")
-         texxt1 = f"https://telegra.ph{response[0]}"    
+         texxt = f"https://telegra.ph{response[0]}"    
          r = requests.get(
-             f"https://nekobot.xyz/api/imagegen?type=baguette&url={texxt1}"
+             f"https://nekobot.xyz/api/imagegen?type=baguette&url={texxt}"
          ).json()
          a = r.get("message")
          iurl = url(a)
