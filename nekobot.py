@@ -47,14 +47,14 @@ with st.expander("Pornhub Comment"):
       st.write("Try it duh!")
 
 with st.expander("Threats"):
-  tex = st.file_uploader("Enter the image you want to use!",type=['png', 'jpg','jpeg'])
+  tex = st.file_uploader("Enter the threat image you want to use!",type=['png', 'jpg','jpeg'])
   if tex != None:
          xt = Image.open(tex)
          xt.save("mp.png",optimize=True,quality=95)
          response = upload_file("mp.png")
-         text1 = f"https://telegra.ph{response[0]}"    
+         tex = f"https://telegra.ph{response[0]}"    
          r = requests.get(
-             f"https://nekobot.xyz/api/imagegen?type=threats&url={text1}"
+             f"https://nekobot.xyz/api/imagegen?type=threats&url={tex}"
          ).json()
          a = r.get("message")
          iurl = url(a)
